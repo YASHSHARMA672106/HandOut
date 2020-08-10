@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Our Mission</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/style.css" />
+
+	<style type="text/css">
+		body{ 
+        margin:0;
+        font:normal 100% Arial, Helvetica, sans-serif;
+        background: linear-gradient(90deg, #ffaf00, #ff006e);
+        background-position: cover;
+}
+		h1{
+			margin: 0;
+			margin-left: 40%;		
+			color: orange;
+			padding-top: 2rem;
+		}
+		.container p{
+			text-align: center;
+			width: 79.5%;
+			margin-left: 12%;
+			font-size: 1.5vw;
+			margin-top: 4rem;
+
+		}
+		.a{
+			max-width: 40%;
+			margin: 0;
+			margin-left: 15%;
+			margin-top: 0.5rem;
+		}
+		.b{
+			max-width: 40%;
+			margin-left: 68%;
+			margin-top: -2.2rem;
+		}
+	</style>
+</head>
+<body>
+		<div style="border: 4px solid black">
+			
+	<nav class=" container navbar navbar-expand-lg navbar-light " >
+  <a class="navbar-brand" href="/" style="font-size: 1.5vw"><b>HandOut</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto" style="font-size: 1.2vw;">
+      <li class="nav-item active">
+        <a class="nav-link mr-3 ml-3" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Contact Us</a>
+      </li>
+	  </ul>
+	  <ul class="navbar-nav navbar-right">
+                        <li>
+                            <a style="color:black;margin-right:2vw;text-decoration:none;" href="/cart/checkout">My Cart (
+                                <% if (typeof cart !== "undefined") { %>
+                                <%= cart.length %>
+                                <% } else {%>
+                                0
+                                <% } %>
+                            )</a>
+                        </li>
+                        <% if (user) { %>
+                        <li><a style="color:black;margin-right:2vw;text-decoration:none;" href="/users/logout">Hi, <%= user.username %> ( logout )</a></li>
+                        <% } else {%>
+						
+
+                        <li><a style="color:black;margin-right:2vw;text-decoration:none;" href="/users/register">Register</a></li>
+                        <li><a style="color:black;margin-right:2vw;text-decoration:none;" href="/users/login">Log in</a></li>
+                        <% } %>
+						
+						
+						
+                        <% if (user && user.admin == 1) { %>
+                        <li><a href="/admin/pages">Admin Area</a></li>
+                        <% }%>
+                        
+                    </ul>
+  </div>
+</nav>
+	</div>	
+<div class="container">
+	
+	<div class="container pb-5 mt-0 pt-0" style="background-color: white; margin-top: 10rem !important;">
+		<h1 class="mt-5">Our Mission</h1>
+		<p > The Handout is a result of immense thoughtful processes and hard work. It promotes the quality of products and satisfaction of our customers. The reason we stay loyal to our brands is that our priority is to serve our customers with exceptional services. Our profit is your happiness and our reward is the solid foundation of brand promoters. We are into this together.</p>
+	</div>
+	<div class="container pt-5 pb-5 mb-5" style="background-color: white;">
+		<div class="d-flex justify-content-around">
+            <div class="p-2 bd-highlight rounded-pill border border-danger" style="width: 25%; height: 20%;" ><img src="/images/a.jpg" class="rounded-pill" style="width: 100%; height: 20%;"></div>
+            <div class="p-2 bd-highlight rounded-pill border border-danger" style="width: 25%; height: 20%;" ><img src="/images/b.jpg" class="rounded-pill" style="width: 100%; height: 20%;"> </div>
+		</div>
+		<h3 class="a">Poorvi Chaudhary</h3>
+		<h3 class="b">Yash Sharma</h3>
+		<div class="d-flex justify-content-around">
+            <div class="p-2 bd-highlight rounded border border-danger" style="background: #ffaf00; width: 28%; height: 20%; font-size: 1.5vw ; text-align: center; padding: 2rem 0; " >
+            	<strong>(Developer, Founder)</strong><br>
+<br><i style="font-size: 1.4vw;">"PATH IS NOT A STRAIGHT LINE, IT'S SPIRAL."</i> --- <br><br>
+<div style="text-align: left;">Passion driven, tech enthusiast. I don't search for passion, I try various stuff and make my passion. Starting HandOut is the result of that passion-driven nature. 
+The HandOut is need of the hour, blessed to serve our customers</div>
+            </div>
+            <div class="p-2  bd-highlight rounded border border-danger" style="margin-left:1rem; background: #ff006e; width: 30%; height: 20%;font-size: 1.5vw ; text-align: center; padding: 2rem 0;" >
+            	<strong>(Developer, Founder)</strong><br>
+<br><i style="font-size: 1.4vw;">"THE WORLD STARTS AND CHANGES WITH YOU" ---</i> <br><br>
+<div style="text-align: left;">Always been a believer of change in society and to serve this Nation better at my own place. Being me, tech guy with the spirit of an entrepreneur, that's it. Shop well, Sell well and Be well. Team Handout will always be there to serve the needy one, always</div>
+             </div>
+		</div>
+
+	</div>
+		</div>
+
+		<% include _layouts/footer %>

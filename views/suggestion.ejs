@@ -1,0 +1,12 @@
+<% include _layouts/header %> 
+<h1 style="display:flex; justify-content: center; align-items: center; margin-top:3vh;">
+	Write Your Suggestions
+</h1>
+<form action= "/suggestion" method= "POST">
+ <div class="form-group" style= "margin-top: 3rem;">
+        <label>Your Suggestions</label>
+        <input type="text" name="suggestion" class="form-control" placeholder="Suggestion">
+    </div>
+ <button type="submit" class="btn btn-default" style="margin-left: 39vw; margin-top: 3vh; border: 2px solid black; background:linear-gradient(90deg, #ffaf00, #ff006e);">Submit</button>
+</form>
+<% include _layouts/footer %>

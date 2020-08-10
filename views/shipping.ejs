@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Policies</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/style.css" />
+
+	<style type="text/css">
+		body{ 
+			width: 100%;
+        margin:0;
+        font:normal 100% Arial, Helvetica, sans-serif;
+        background: linear-gradient(90deg, #ffaf00, #ff006e);
+        background-position: cover;
+}
+		h1{
+			margin: 0;
+			margin-left: 35%;		
+			color: orange;
+			padding-top: 2rem;
+		}
+
+		.a{
+			max-width: 40%;
+			margin: 0;
+			margin-left: 15%;
+			margin-top: 0.5rem;
+		}
+		.b{
+			max-width: 40%;
+			margin-left: 68%;
+			margin-top: -2.2rem;
+		}
+	</style>
+</head>
+<body>
+	<div style="border: 4px solid black">
+			
+	<nav class=" container navbar navbar-expand-lg navbar-light " >
+  <a class="navbar-brand" href="/" style="font-size: 1.5vw"><b>HandOut</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto" style="font-size: 1.2vw;">
+      <li class="nav-item active">
+        <a class="nav-link mr-3 ml-3" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Contact Us</a>
+      </li>
+	  </ul>
+	  <ul class="navbar-nav navbar-right">
+                        <li>
+                            <a style="color:black;margin-right:2vw;text-decoration:none;" href="/cart/checkout">My Cart (
+                                <% if (typeof cart !== "undefined") { %>
+                                <%= cart.length %>
+                                <% } else {%>
+                                0
+                                <% } %>
+                            )</a>
+                        </li>
+                        <% if (user) { %>
+                        <li><a style="color:black;margin-right:2vw;text-decoration:none;" href="/users/logout">Hi, <%= user.username %> ( logout )</a></li>
+                        <% } else {%>
+						
+
+                        <li><a style="color:black;margin-right:2vw;text-decoration:none;" href="/users/register">Register</a></li>
+                        <li><a style="color:black;margin-right:2vw;text-decoration:none;" href="/users/login">Log in</a></li>
+                        <% } %>
+						
+						
+						
+                        <% if (user && user.admin == 1) { %>
+                        <li><a href="/admin/pages">Admin Area</a></li>
+                        <% }%>
+                        
+                    </ul>
+  </div>
+</nav>
+	</div>	
+	<div class="container pb-5 mt-0 pt-0" style="background-color: white; margin-top: 10rem !important;">
+		<h1 class="mt-5">Shipping & Returns</h1>
+		<div class="container pt-5 pb-5 mb-5" style="background-color: white;">
+		
+		<h3 class="a">Shipping Policies</h3>
+		<h3 class="b">Return Policies</h3>
+		<div class="d-flex justify-content-start">
+            <div class="p-2 bd-highlight rounded border border-danger" style="background: #ffaf00; width: 50%; height: 20%; font-size: 1.5vw ; text-align: center; padding: 2rem 0; " >
+            	<br><br>
+<div style="text-align: left;">Handout ("we" and "us") is the operator of (https://Handout.com) ("Website"). By placing an order through this Website you will be agreeing to the terms below. These are provided to ensure both parties are aware of and agree upon this arrangement to mutually protect and set expectations on our service.
+
+ <br>
+ <br>
+
+<strong>1. General</strong>
+<br>
+
+Subject to stock availability. We try to maintain accurate stock counts on our website but from time-to-time, there may be a stock discrepancy and we will not be able to fulfill all your items at the time of purchase. In this instance, we will fulfill the available products to you, and contact you about whether you would prefer to await restocking of the back-ordered item or if you would prefer for us to process a refund.
+<br>
+ <br>
+<strong>2. Shipping Costs</strong>
+
+Shipping costs are calculated during checkout based on weight, dimensions, and destination of the items in the order. Payment for shipping will be collected with the purchase.
+
+This price will be the final price for the shipping costs to the customer.
+<br>
+ <br>
+<strong>3. Returns </strong>
+
+<br>
+3.1 Return Due To Change Of Mind
+<br>
+
+The handout will happily accept returns due to change of mind as long as a request to return is received by us within 10 days of receipt of item and are returned to us in the original packaging, unused and in resellable condition.
+
+Return shipping will be paid at the customer's expense and will be required to arrange their own shipping.
+
+ 
+
+Once returns are received and accepted, refunds will be processed to store credit for a future purchase. We will notify you once this has been completed through email.
+
+ 
+
+(Handout) will refund the value of the goods returned but will NOT refund the value of any shipping paid.
+
+ <br>
+<br>
+3.2 Warranty Returns
+<br>
+
+The handout will happily honor any valid warranty claims, provided a claim is submitted within 90 days of receipt of items.
+
+Customers will be required to pre-pay the return shipping, however, we will reimburse you upon a successful warranty claim.
+
+Upon return receipt of items for a warranty claim, you can expect Handout to process your warranty claim within 7 days.
+
+Once the warranty claim is confirmed, you will receive the choice of:
+<br>
+
+(a) refund to your payment method
+<br>
+
+(b) a refund in-store credit
+<br>
+
+(c) a replacement item sent to you (if stock is available)
+<br>
+
+ 
+<br>
+<br>
+<strong>4. Delivery Terms</strong>
+<br>
+
+<br>
+4.1 Transit Time Domestically
+<br>
+
+In general, domestic shipments are in transit for 2 - 7 days
+
+ 
+<br>
+<br>
+4.2 Transit time Internationally
+<br>
+
+Generally, orders shipped internationally are in transit for 4 - 22 days. This varies greatly depending on the courier you have selected. We are able to offer a more specific estimate when you are choosing your courier at the checkout.
+
+ <br>
+<br>
+4.3 Change Of Delivery Address
+<br>
+
+Orders placed before 12 PM - PDT (UTC-07) will be dispatched the same day, otherwise, within the next business day.
+
+Our warehouse operates on Monday - Friday during standard business hours, except on national holidays at which time the warehouse will be closed. In these instances, we take steps to ensure shipment delays will be kept to a minimum.
+<br>
+ <br>
+
+4.4 Change Of Delivery Address
+<br>
+
+For a change of delivery address requests, we are able to change the address at any time before the order has been dispatched.
+<br>
+ <br>
+
+ 
+
+4.5 P.O. Box Shipping
+<br>
+
+The handout will ship to P.O. box addresses using postal services only. We are unable to offer couriers services to these locations.
+<br>
+ <br>
+
+ 
+
+4.6 Military Address Shipping
+<br>
+We are able to ship to military addresses using USPS. We are unable to offer this service using courier services.
+
+ <br>
+ <br>
+
+
+4.7 Items Out Of Stock
+<br>
+If an item is out of stock, we will dispatch the in-stock items immediately and send the remaining items once they return to stock.
+<br>
+ <br>
+
+ 
+
+4.8 Delivery Time Exceeded
+<br>
+If the delivery time has exceeded the forecasted time, please contact us so that we can conduct an investigation.
+
+ <br>
+ <br>
+
+<strong>5. Tracking Notifications</strong>
+<br>
+Upon dispatch, customers will receive a tracking link from which they will be able to follow the progress of their shipment based on the latest updates made available by the shipping provider.
+
+ <br>
+ <br>
+
+
+<strong>6. Parcels Damaged In Transit</strong>
+<br>
+If you find a parcel is damaged in transit, if possible, please reject the parcel from the courier and get in touch with our customer service. If the parcel has been delivered without you being present, please contact customer service with the next steps.
+
+ <br>
+ <br>
+
+
+<strong>7. Duties & Taxes</strong>
+<br>
+<br>
+
+
+7.1 Sales Tax
+<br>
+Sales tax has already been applied to the price of the goods as displayed on the website
+
+ <br>
+ <br>
+
+
+7.2 Import Duties & Taxes
+<br>
+Import duties and taxes for international shipments will be pre-paid, without any additional fees to be paid by customer upon arrival in the destination country
+<br>
+ <br>
+
+ 
+<strong>8. Cancellations</strong>
+<br>
+If you change your mind before you have received your order, we are able to accept cancellations at any time before the order has been dispatched. If an order has already been dispatched, please refer to our refund policy.
+
+ <br>
+ <br>
+<strong>9. Insurance</strong>
+
+Parcels are insured for loss and damage up to the value as stated by the courier.
+
+ 
+<br>
+<br>
+
+9.1 Process for parcel damaged in-transit
+<br>
+
+We will process a refund or replacement as soon as the courier has completed its investigation into the claim.
+
+ <br>
+<br>
+
+
+9.2 Process for parcel lost in transit
+<br>
+
+We will process a refund or replacement as soon as the courier has conducted an investigation and deemed the parcel lost.
+
+ <br>
+<br>
+
+<strong>10. Customer service</strong>
+<br>
+
+For all customer service inquiries, please submit an inquiry at Handout04@gmail.com</div>
+            </div>
+            <div class="p-2 bd-highlight rounded border border-danger" style="margin-left:1rem; background: #ff006e; width: 50%; height: 20%;font-size: 1.5vw ; text-align: center; padding: 2rem 0;" >
+            	<br><br>
+<div style="text-align: left;">
+
+ 
+
+Thank you for your purchase. We hope you are happy with your purchase. However, if you are not completely satisfied with your purchase for any reason, you may return it to us for a full refund or an exchange. Please see below for more information on our return policy.
+
+ <br><br>
+<strong>RETURNS</strong>
+
+
+ <br>
+
+All returns must be postmarked within ten (10) days of the purchase date. All returned items must be in new and unused condition, with all original tags and labels attached.
+<br>
+ <br>
+<strong>RETURN PROCESS</strong>
+
+<br>
+ 
+
+To return an item, please email customer service at handout04@gmail.com to obtain a Return Merchandise Authorization (RMA) number. After receiving an RMA number, place the item securely in its original packaging and include your proof of purchase, and mail your return to the following address:
+
+ 
+<br>
+ <br>
+
+Attn: Returns
+<br>
+RMA
+
+<br> 
+
+,  
+
+India  
+
+ <br>
+
+You may also use the prepaid shipping label enclosed with your package. Return shipping charges will be paid or reimbursed by us. 
+<br>
+ <br>
+<strong>REFUNDS</strong>
+
+ <br>
+
+After receiving your return and inspecting the condition of your item, we will process your return or exchange. Please allow at least seven (7) days from the receipt of your item to process your return or exchange. We will notify you by email when your return has been processed.
+
+ <br>
+<br>
+<strong>EXCEPTIONS</strong>
+
+
+ <br>
+
+The following items cannot be returned or exchanged: 
+
+ 
+
+     ●     Items those are damaged by the customer.    
+
+     ●     Expires the refund period.      
+
+ 
+<br>
+For defective or damaged products, please contact us at the customer service number below to arrange a refund or exchange. 
+
+        
+
+ <br>
+<br>
+<strong>QUESTIONS</strong>
+ 
+<br>
+If you have any questions concerning our return policy, please contact us at: 
+<br>
+handout04@gmail.com </div>
+             </div>
+		</div>
+
+	</div>
+		
+    </div>
+		<% include _layouts/footer %>

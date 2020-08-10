@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" />
+        <link rel="stylesheet" href="/css/style.css" />
+<style>
+  body {
+ background: linear-gradient(90deg, #ffaf00, #ff006e);
+  }
+  h2 {
+    margin-left: 22vw;
+	  margin-bottom: 2rem;
+	  font-size: 40px;
+	  color: orange;
+  }
+.accordion {
+  background-color: transparent;
+  cursor: pointer;
+  padding: 18px;
+  width: 70%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  margin-left: 15%;
+
+}
+	.not .container {
+		background-color: white;
+		width: 70%;
+		margin-left: 15%;
+		margin-top: 8%;
+	}
+.active, .accordion:hover {
+  background-color: #ffaf00;
+  border: 2px solid black;
+  box-shadow: 5px 6px #ff006e;
+  transform: skew(2deg, 2deg);
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: transparent;
+  overflow: hidden;
+	width: 70%;
+  margin-left: 15%;
+  margin-top: 2rem;
+}
+</style>
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">HandOut</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                       
+						<li><a href= "/">Home</a></li>
+						<li><a href= "/contact">Contact Us</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="/cart/checkout">My Cart (
+                                <% if (typeof cart !== "undefined") { %>
+                                <%= cart.length %>
+                                <% } else {%>
+                                0
+                                <% } %>
+                            )</a>
+                        </li>
+                        <% if (user) { %>
+                        <li><a href="/users/logout">Hi, <%= user.username %> ( logout )</a></li>
+                        <% } else {%>
+						
+
+                        <li><a href="/users/register">Register</a></li>
+                        <li><a href="/users/login">Log in</a></li>
+                        <% } %>
+						<li><a href="https://m.facebook.com/Handout-Store-101945594933026"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.instagram.com/handout.store/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCpbMS7Fx6N_J7tMO8gZkWuQ?view_as=subscriber"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                        <% if (user && user.admin == 1) { %>
+                        <li><a href="/admin/pages">Admin Area</a></li>
+                        <% }%>
+                        
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+
+    
+            <div class="container">
+            <%- messages('messages', locals) %>
+            
+            <% if (errors) {%>
+                <% errors.forEach(function(error) { %>
+                <div class="alert alert-danger">
+                    <%= error.msg %>
+                </div>
+                <% });%>
+            <% }%>
+				<div class="not">
+					
+				
+<div class= "container rounded">
+	<h2>FAQ</h2>
+	<button class="accordion">How do I place an order?</button>
+<div class="panel">
+  <p>To buy a product or place an order, you must click on buy now and after that you will be redirected to your cart. Complete the shipping details and payment. Bravo! You have successfully placed your order..</p>
+</div>
+
+<button class="accordion">What are various payment options available?</button>
+<div class="panel">
+  <p>You can view all the options when you click on buy now button on any product..</p>
+</div>
+
+<button class="accordion">What are return policies?</button>
+<div class="panel">
+  <p>Go to this page's footer and click on shipping and return policies.</p>
+</div>
+<button class="accordion">How can I contact customer care?</button>
+<div class="panel">
+  <p>Click contact in the header from there you can get all the necessary contact details.</p>
+</div>
+<button class="accordion">How secure is your site?</button>
+<div class="panel">
+  <p>Customers security and satisfaction is main motive we will try our best to give you exceptional service. Retailers which are associated with us are trustworthy.</p>
+</div>
+	</div>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+
+<% include _layouts/footer %>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>HandOut</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" />
+        <link rel="stylesheet" href="/css/style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<style type="text/css">
+			.form-control {
+				border: 4px solid orange;
+				color: black;
+				text-align: center;
+				font-weight: 400;
+			}
+		</style>
+    </head>
+
+    <body>
+            <div class="ajaxbg">
+            <div class="ajaxinner">
+                <h3>You are now being redirected to paypal...</h3>
+                <img src="/images/ajax-loader.gif" alt=""/>
+            </div>
+        </div>
+        <div style="border: 4px solid black">
+			
+	<nav class=" container navbar navbar-expand-lg navbar-light " >
+  <a class="navbar-brand" href="/" style="font-size: 1.5vw"><b>HandOut</b></a>
+			  <ul class="navbar-nav navbar-right d-inline d-lg-none">
+                  <li>
+                            <a style="color:black;margin-right:0;text-decoration:none;" href="/cart/checkout">My Cart (
+                                <% if (typeof cart !== "undefined") { %>
+                                <%= cart.length %>
+                                <% } else {%>
+                                0
+                                <% } %>
+                            )</a>
+                        </li>
+		</ul>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto" style="font-size: 1.2vw;">
+      <li class="nav-item active">
+        <a class="nav-link mr-3 ml-3" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Contact Us <span class="sr-only">(current)</span></a>
+      </li>
+	  </ul>
+	  <ul class="navbar-nav navbar-right">
+                        <li class="d-none d-lg-inline">
+                            <a style="color:black;margin-right:2vw;text-decoration:none;" href="/cart/checkout">My Cart (
+                                <% if (typeof cart !== "undefined") { %>
+                                <%= cart.length %>
+                                <% } else {%>
+                                0
+                                <% } %>
+                            )</a>
+                        </li>
+                        <% if (user) { %>
+                        <li><a style="color:black;margin-right:2vw;text-decoration:none;" href="/users/logout">Hi, <%= user.username %> ( logout )</a></li>
+                        <% } else {%>
+						
+
+                        <li><a style="color:black;margin-right:2vw;text-decoration:none;" href="/users/register">Register</a></li>
+                        <li><a style="color:black;margin-right:2vw;text-decoration:none;" href="/users/login">Log in</a></li>
+                        <% } %>
+						
+						
+						
+                        <% if (user && user.admin == 1) { %>
+                        <li><a href="/admin/pages">Admin Area</a></li>
+                        <% }%>
+                        
+                    </ul>
+  </div>
+</nav>
+	</div>	
+
+    
+            <div class="container">
+            <%- messages('messages', locals) %>
+            
+            <% if (errors) {%>
+                <% errors.forEach(function(error) { %>
+                <div class="alert alert-danger">
+                    <%= error.msg %>
+                </div>
+                <% });%>
+            <% }%>
+		
